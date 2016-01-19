@@ -16,9 +16,10 @@ import cgi
 class InfoHandler(webapp2.RequestHandler):
     def base_info(self):
         rv = {
-            'User-Agent': self.request.headers['User-Agent'],
-            'Content-Type': self.request.headers['Content-Type'],
+            #'User-Agent': self.request.headers['User-Agent'],
+            #'Content-Type': self.request.headers['Content-Type'],
             'ip': self.request.remote_addr,
+            'headers': dict(self.request.headers),
         }
         return rv
 
